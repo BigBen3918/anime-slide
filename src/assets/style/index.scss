@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    /* Set the background image */
+    background-image: url(../images/bg.jpg);
+    /* Set the background size */
+    background-size: cover; /* or contain, or a specific width and height */
+
+    /* Set the background repeat */
+    background-repeat: no-repeat; /* or repeat-x, repeat-y, or repeat */
+
+    /* Set the background position */
+    background-position: center; /* or a specific position like top left, bottom right */
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 600px;
+        justify-content: center;
+        padding: 20px;
+
+        @media screen and (max-width: 900px) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
