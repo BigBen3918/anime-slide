@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 import MainBoard from "./pages/main";
-import RandomImage from "./pages/random";
+import { CloudImage, AnimeImage } from "./pages/random";
 
 // Global StyleSheet
 import "./assets/style/index.scss";
@@ -10,35 +10,70 @@ function App() {
     const slides: any = [
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
         },
         {
             key: uuid(),
-            content: <RandomImage cloud_name="dqm00mcjs" tag="carousel" />,
+            content: <CloudImage cloud_name="dqm00mcjs" tag="carousel" />,
+        },
+    ];
+
+    const animeSlide: any = [
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="1" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="2" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="3" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="4" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="5" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="7" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="8" />,
+        },
+        {
+            key: uuid(),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="9" />,
         },
     ];
 

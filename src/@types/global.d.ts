@@ -2,7 +2,12 @@
 declare module "*.png";
 
 // Declare Interface
-declare interface RDImageInterface {
+declare interface CDImageInterface {
     cloud_name: String;
     tag: String;
+}
+
+declare interface AIImageInterface {
+    cloud_name: any;
+    tag: string;
 }
