@@ -58,62 +58,13 @@ const CloudImage = (props: CDImageInterface) => {
     }
 };
 
-var AnimeusedIndexes: any = [];
+// var AnimeusedIndexes: any = [];
 const AnimeImage = (props: AIImageInterface) => {
     const { cloud_name, tag } = props;
 
-    // Declare the state variable `image` and a function `setImage` to update it
-    const [image, setImage]: any = useState(null);
+    var timestamp = new Date().getTime();
 
-    // The effect hook is executed when the component is first rendered and after any re-render caused by changes in the state
-    useEffect(() => {
-        const fetchData = async () => {
-            // Fetch the list of images from Cloudinary
-            var randomNum = Math.floor(Math.random() * 426) + 1000;
-            // Check if this random index has already been used
-            while (AnimeusedIndexes.includes(randomNum)) {
-                randomNum = Math.floor(Math.random() * 426) + 1000;
-                // When the array of used indexes fills up, empty it out
-                if (AnimeusedIndexes.length === 1425) {
-                    AnimeusedIndexes = [];
-                }
-            }
-            const response = await fetch(cloud_name, {
-                mode: "no-cors",
-            });
-            console.log(response);
-            const data: any = await response.json();
-
-            // Generate a random index from the list of images
-            let randomIndex = Math.floor(Math.random() * data.akatsuki.length);
-
-            // Check if this random index has already been used
-            while (AnimeusedIndexes.includes(randomIndex)) {
-                // If the random index has been used, generate a new random index
-                randomIndex = Math.floor(Math.random() * data.akatsuki.length);
-
-                // When the array of used indexes fills up, empty it out
-                if (AnimeusedIndexes.length === data.akatsuki.length - 1) {
-                    AnimeusedIndexes = [];
-                }
-            }
-
-            // Store this new random index in the array of used indexes
-            AnimeusedIndexes.push(randomIndex);
-
-            // Set the state with the randomly selected image
-            const randomImage = data.AnimeusedIndexes[randomIndex];
-            setImage(randomImage.images);
-        };
-        fetchData();
-    }, [cloud_name, tag]);
-
-    if (image) {
-        return <img src={image} alt={tag} />;
-    } else {
-        // Return null while the image is not yet fetched
-        return null;
-    }
+    return <img src={cloud_name + "?t=" + timestamp} alt={tag} />;
 };
 
 // Export the RandomImage component

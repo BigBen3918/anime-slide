@@ -46,75 +46,35 @@ function App() {
     const animeSlide: any = [
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="1"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="1" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="2"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="2" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="3"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="3" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="4"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="4" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="5"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="5" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="7"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="7" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="8"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="8" />,
         },
         {
             key: uuid(),
-            content: (
-                <AnimeImage
-                    cloud_name="https://narutodb.xyz/api/akatsuki/"
-                    tag="9"
-                />
-            ),
+            content: <AnimeImage cloud_name="https://pic.re/image" tag="9" />,
         },
     ];
 
