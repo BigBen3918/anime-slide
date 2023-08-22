@@ -78,7 +78,9 @@ const AnimeImage = (props: AIImageInterface) => {
                     AnimeusedIndexes = [];
                 }
             }
-            const response = await fetch(`${cloud_name}${randomNum}`);
+            const response = await fetch(`${cloud_name}${randomNum}`, {
+                mode: "no-cors",
+            });
             const data: any = await response.json();
 
             // Store this new random index in the array of used indexes
