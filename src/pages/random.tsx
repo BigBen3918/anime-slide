@@ -81,6 +81,7 @@ const AnimeImage = (props: AIImageInterface) => {
             const response = await fetch(`${cloud_name}`, {
                 mode: "no-cors",
             });
+            console.log(response);
             const data: any = await response.json();
 
             // Generate a random index from the list of images
