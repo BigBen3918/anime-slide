@@ -58,12 +58,45 @@ const CloudImage = (props: CDImageInterface) => {
     }
 };
 
-// var AnimeusedIndexes: any = [];
+var AnimeusedIndexes: any = [];
 const AnimeImage = (props: AIImageInterface) => {
     const { cloud_name, tag } = props;
 
-    // Set the alt attribute for the image
-    return <img src={cloud_name} alt={tag} />;
+    // Declare the state variable `image` and a function `setImage` to update it
+    const [image, setImage]: any = useState(null);
+
+    // The effect hook is executed when the component is first rendered and after any re-render caused by changes in the state
+    useEffect(() => {
+        const fetchData = async () => {
+            // Fetch the list of images from Cloudinary
+            var randomNum = Math.floor(Math.random() * 1426);
+            // Check if this random index has already been used
+            while (AnimeusedIndexes.includes(randomNum)) {
+                randomNum = Math.floor(Math.random() * 1426);
+                // When the array of used indexes fills up, empty it out
+                if (AnimeusedIndexes.length === 1425) {
+                    AnimeusedIndexes = [];
+                }
+            }
+            const response = await fetch(`${cloud_name}${randomNum}`);
+            const data: any = await response.json();
+
+            // Store this new random index in the array of used indexes
+            AnimeusedIndexes.push(randomNum);
+
+            // Set the state with the randomly selected image
+            const result = data.images;
+            setImage(result[0]);
+        };
+        fetchData();
+    }, [cloud_name, tag]);
+
+    if (image) {
+        return <img src={image} alt={tag} />;
+    } else {
+        // Return null while the image is not yet fetched
+        return null;
+    }
 };
 
 // Export the RandomImage component
