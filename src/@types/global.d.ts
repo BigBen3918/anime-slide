@@ -2,7 +2,7 @@
 declare module "*.png";
 
 // Declare Interface
-export interface RDImageInterface {
+declare interface RDImageInterface {
     cloud_name: String;
     tag: String;
 }
