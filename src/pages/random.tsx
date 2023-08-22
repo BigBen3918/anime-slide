@@ -78,7 +78,7 @@ const AnimeImage = (props: AIImageInterface) => {
                     AnimeusedIndexes = [];
                 }
             }
-            const response = await fetch(`${cloud_name}`, {
+            const response = await fetch(cloud_name, {
                 mode: "no-cors",
             });
             console.log(response);
