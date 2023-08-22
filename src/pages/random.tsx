@@ -78,17 +78,31 @@ const AnimeImage = (props: AIImageInterface) => {
                     AnimeusedIndexes = [];
                 }
             }
-            const response = await fetch(`${cloud_name}${randomNum}`, {
+            const response = await fetch(`${cloud_name}`, {
                 mode: "no-cors",
             });
             const data: any = await response.json();
 
+            // Generate a random index from the list of images
+            let randomIndex = Math.floor(Math.random() * data.akatsuki.length);
+
+            // Check if this random index has already been used
+            while (AnimeusedIndexes.includes(randomIndex)) {
+                // If the random index has been used, generate a new random index
+                randomIndex = Math.floor(Math.random() * data.akatsuki.length);
+
+                // When the array of used indexes fills up, empty it out
+                if (AnimeusedIndexes.length === data.akatsuki.length - 1) {
+                    AnimeusedIndexes = [];
+                }
+            }
+
             // Store this new random index in the array of used indexes
-            AnimeusedIndexes.push(randomNum);
+            AnimeusedIndexes.push(randomIndex);
 
             // Set the state with the randomly selected image
-            const result = data.images;
-            setImage(result[0]);
+            const randomImage = data.AnimeusedIndexes[randomIndex];
+            setImage(randomImage.images);
         };
         fetchData();
     }, [cloud_name, tag]);
