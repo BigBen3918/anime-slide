@@ -69,10 +69,10 @@ const AnimeImage = (props: AIImageInterface) => {
     useEffect(() => {
         const fetchData = async () => {
             // Fetch the list of images from Cloudinary
-            var randomNum = Math.floor(Math.random() * 1426);
+            var randomNum = Math.floor(Math.random() * 426) + 1000;
             // Check if this random index has already been used
             while (AnimeusedIndexes.includes(randomNum)) {
-                randomNum = Math.floor(Math.random() * 1426);
+                randomNum = Math.floor(Math.random() * 426) + 1000;
                 // When the array of used indexes fills up, empty it out
                 if (AnimeusedIndexes.length === 1425) {
                     AnimeusedIndexes = [];
